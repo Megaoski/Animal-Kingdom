@@ -4,7 +4,9 @@
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
 #include "ModuleAudio.h"
+#include "ModuleFirstMap.h"
 #include "ModuleIntro.h"
+#include "ModuleFadeToBlack.h"
 #include "ModuleCollision.h"
 
 
@@ -17,7 +19,9 @@ Application::Application()
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = audio = new ModuleAudio();
+	modules[i++] = firstmap = new ModuleFirstMap();
 	modules[i++] = intro = new ModuleIntro();
+	modules[i++] = fade = new ModuleFadeToBlack();
 	modules[i++] = collision = new ModuleCollision();
 	
 	
@@ -35,8 +39,8 @@ bool Application::Init()
 	bool ret = true;
 
 	//Disabling stopped modules
-	/*stage1->Disable();
-	player->Disable();
+	firstmap->Disable();
+	/*player->Disable();
 	bonus->Disable();*/
 	//-
 

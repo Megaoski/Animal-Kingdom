@@ -4,6 +4,8 @@
 
 #include "Module.h" 
 #include "ModuleAudio.h"
+#include "Animation.h"
+#include "SDL/include/SDL.h"
 
 struct SDL_Texture;
 
@@ -19,8 +21,10 @@ public:
 
 public:
 
-	SDL_Texture* intro = nullptr;
+	SDL_Texture* intro_screen = nullptr;
 	Mix_Music* musiquita;
+
+	Animation intro;
 
 };
 
