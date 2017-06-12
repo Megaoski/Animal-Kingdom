@@ -4,6 +4,7 @@
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
 #include "ModuleAudio.h"
+#include "ModuleIntro.h"
 #include "ModuleCollision.h"
 
 
@@ -16,6 +17,7 @@ Application::Application()
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = audio = new ModuleAudio();
+	modules[i++] = intro = new ModuleIntro();
 	modules[i++] = collision = new ModuleCollision();
 	
 	
