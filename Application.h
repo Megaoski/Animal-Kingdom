@@ -3,16 +3,29 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 
+#define NUM_MODULES 6
+
+class ModuleWindow;
+class ModuleInput;
+class ModuleTextures;
+class ModuleRender;
+class ModuleAudio;
+class ModuleCollision;
+class Module;
 
 
-
-// TODO 1: Create an intro scene with rtype/intro.png that then fades to ModuleSpaceScene
 
 class Application
 {
 public:
 
+	Module* modules[NUM_MODULES];
+	ModuleWindow* window;
+	ModuleRender* render;
+	ModuleInput* input;
+	ModuleTextures* textures;
+	ModuleAudio* audio;
+	ModuleCollision* collision;
 	
 
 public:
