@@ -22,7 +22,7 @@ bool ModuleIntro::Start()
 	LOG("Loading intro scene");
 
 
-	intro_screen = App->textures->Load("rtype/intro.png");
+	intro_screen = App->textures->Load("animal-kingdom/game/intro.png");
 	musiquita = App->audio->LoadMusic("rtype/intro.ogg");
 
 
@@ -55,7 +55,7 @@ update_status ModuleIntro::Update()
 
 
 	// Draw everything --------------------------------------
-	App->render->Blit(7, intro_screen, 0, 0, { 0,1 }, &intro.GetCurrentFrame());
+	App->render->Blit(intro_screen, 0, 0, NULL);
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_REPEAT)
 	{

@@ -58,7 +58,7 @@ update_status ModuleFirstMap::Update()
 	SDL_Rect map = { 0,0, STAGE_WIDTH, STAGE_HEIGHT };
 
 	// Draw everything --------------------------------------
-	App->render->Blit(1, background, SCREEN_WIDTH / 2 - STAGE_WIDTH / 2, -STAGE_HEIGHT + SCREEN_HEIGHT, { 0,1 }, &map);
+	App->render->Blit(background, 0, 0, NULL);
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN)
 	{

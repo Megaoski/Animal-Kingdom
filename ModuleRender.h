@@ -1,30 +1,17 @@
-#ifndef __ModuleRenderer_H__
-#define __ModuleRenderer_H__
+#ifndef __ModuleRender_H__
+#define __ModuleRender_H__
 
 #include "Module.h"
+#include "SDL\include\SDL_rect.h"
 #include "p2Point.h"
 #include "pQueue.h"
 
 struct SDL_Renderer;
 struct SDL_Texture;
-struct SDL_Rect;
 
 class ModuleRender : public Module
 {
 private:
-	struct Blit_Request {
-		SDL_Texture* text = nullptr;
-		SDL_Rect* section = nullptr;
-		SDL_Rect rect;
-		double angle;
-
-		Blit_Request(SDL_Texture* _text, SDL_Rect* _section, SDL_Rect _rect, double _angle) :
-			text(_text), rect(_rect), angle(_angle)
-		{
-			if (_section != nullptr)
-				section = new SDL_Rect(*_section);
-		}
-	};
 
 	struct Quad_Request {
 		Uint8 r, g, b, a;
@@ -35,21 +22,21 @@ private:
 		{}
 	};
 
-private:
-	pQueue<Blit_Request> b_requests;
-	pQueue<Quad_Request> quads;
-
 public:
 	ModuleRender();
 	~ModuleRender();
 
 	bool Init();
 	update_status PostUpdate();
+	update_status Update();
 	update_status PreUpdate();
 	bool CleanUp();
 
-	bool Blit(int layer, SDL_Texture* texture, int x, int y, iPoint direction = { 0,1 }, SDL_Rect* section = nullptr);
+	bool Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, float speed = 1.0f);
 	bool DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool use_camera = true);
+
+private:
+	pQueue<Quad_Request> quads;
 
 public:
 	SDL_Renderer* renderer = nullptr;
