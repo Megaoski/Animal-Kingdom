@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="MemLeaks.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -41,8 +38,5 @@
     <ClInclude Include="SDL_mixer.h">
       <Filter>Containers</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="SDL2_mixer.lib" />
   </ItemGroup>
 </Project>
